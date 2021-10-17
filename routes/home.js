@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const mongoose = require('mongoose');
 const axios = require('axios');
-router.post('/:firstCollection', async (req, res) => {
+router.post('/connect/:firstCollection', async (req, res) => {
     //mongo db connection
     mongoose.connect(`${req.body.mongoURL}/__CONCOX__?retryWrites=true&w=majority`, { keepAlive: true, useNewUrlParser: true, useUnifiedTopology: true }, () => {
         console.log('connected to DATABASE')
