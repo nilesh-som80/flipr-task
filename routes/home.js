@@ -19,8 +19,5 @@ router.post('/connect/:firstCollection', async (req, res) => {
 
 
 })
-router.post('/nd', function (req, res) {
-  res.send('ikdokfo')
-})
 
 module.exports = router
