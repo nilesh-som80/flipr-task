@@ -13,8 +13,13 @@ router.post('/connect/:firstCollection', async (req, res) => {
         }
     })
     const Data = mongoose.model(req.params.firstCollection, coll1);
-    // const data = axios({url , method: 'GET'})
-    return res.status(200).send("new data added successfully");
+    try {
+        const data = await MyModel.find({});
+    return res.status(200).send(data);    
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+    
 
 
 
